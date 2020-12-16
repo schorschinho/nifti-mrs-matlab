@@ -122,7 +122,7 @@ sw = 1/nii.hdr.pixdim(5)
 sw = 1.2005e+04
 ```
 
-We also find the spatial coordinates of the MRS voxel (dimensions and offset) in the s`form` field, which we can use to create a voxel overlay mask on an anatomical image.
+We also find the spatial coordinates of the MRS voxel (dimensions and offset) in the `sform` field, which we can use to create a voxel overlay mask on an anatomical image.
 
 # The NIfTI MRS header extension
 
