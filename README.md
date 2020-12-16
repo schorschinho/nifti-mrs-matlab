@@ -29,7 +29,7 @@ Load the NIfTI file:
 nii = nii_tool('load', nifti_file);
 ```
 
-The resulting `nii` struct contains the data array (`img`) , NIfTI header (`hdr)`, and the MRS header extension (`ext`):
+The resulting `nii` struct contains the data array (`img`) , NIfTI header (`hdr`), and the MRS header extension (`ext`):
 
 ```matlab:Code
 nii
@@ -56,8 +56,7 @@ legend('real', 'imag');
 hold off
 ```
 
-![/Users/Georg/Documents/MATLAB/nifti-mrs-matlab/README_images/figure_0.png
-](README_images//Users/Georg/Documents/MATLAB/nifti-mrs-matlab/README_images/figure_0.png)
+![/README_images/figure_0.png](/README_images/figure_0.png)
 
 # The NIfTI header
 
@@ -171,8 +170,7 @@ xlabel('Chemical shift (ppm)');
 hold off;
 ```
 
-![/Users/Georg/Documents/MATLAB/nifti-mrs-matlab/README_images/figure_1.png
-](README_images//Users/Georg/Documents/MATLAB/nifti-mrs-matlab/README_images/figure_1.png)
+![/README_images/figure_1.png](/README_images/figure_1.png)
 
 ## Credit
 
