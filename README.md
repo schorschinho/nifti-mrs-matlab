@@ -135,7 +135,7 @@ header_extension = jsondecode(nii.ext.edata_decoded)
 
 ```text:Output
 header_extension =
-    TransmitterFrequency: 297.2199
+   SpectrometerFrequency: 297.2199
          ResonantNucleus: '1H'
                 EchoTime: 0.0110
           RepetitionTime: 5
@@ -151,7 +151,7 @@ With the spectrometer frequency in MHz now known, we can create a chemical shift
 
 ```matlab:Code
 % Extract F0 and number of samples
-f0 = header_extension.TransmitterFrequency;
+f0 = header_extension.SpectrometerFrequency;
 npts = nii.hdr.dim(5);
 
 % Create frequency axis
@@ -167,6 +167,7 @@ hold on;
 plot(ppm, imag(spec));
 set(gca, 'xdir', 'reverse', 'xlim', [0 5]);
 xlabel('Chemical shift (ppm)');
+legend('real', 'imag');
 hold off;
 ```
 

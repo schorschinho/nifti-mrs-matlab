@@ -13,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{epstopdf}
+\usepackage[table]{xcolor}
 \usepackage{matlab}
 
 \sloppy
@@ -110,7 +111,7 @@ legend('real', 'imag');
 hold off
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_0}
+\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_0.png}
 \end{center}
 
 \matlabheading{The NIfTI header}
@@ -203,15 +204,15 @@ header_extension = jsondecode(nii.ext.edata_decoded)
 \end{matlabcode}
 \begin{matlaboutput}
 header_extension = 
-    TransmitterFrequency: 297.2199
-         ResonantNucleus: '1H'
-                EchoTime: 0.0110
-          RepetitionTime: 5
-           InversionTime: []
-              MixingTime: 0.0320
-        ConversionMethod: 'Manual'
-          ConversionTime: '2020-11-20T08:20:51.208'
-            OriginalFile: {'meas_MID310_STEAM_metab_FID115673.dat'}
+    SpectrometerFrequency: 297.2199
+          ResonantNucleus: {'1H'}
+                 EchoTime: 0.0110
+           RepetitionTime: 5
+            InversionTime: []
+               MixingTime: 0.0320
+         ConversionMethod: 'Manual'
+           ConversionTime: '2020-12-16T17:14:47.920'
+             OriginalFile: {'meas_MID310_STEAM_metab_FID115673.dat'}
 
 \end{matlaboutput}
 
@@ -223,7 +224,7 @@ With the spectrometer frequency in MHz now known, we can create a chemical shift
 
 \begin{matlabcode}
 % Extract F0 and number of samples
-f0 = header_extension.TransmitterFrequency;
+f0 = header_extension.SpectrometerFrequency;
 npts = nii.hdr.dim(5);
 
 % Create frequency axis
@@ -239,10 +240,11 @@ hold on;
 plot(ppm, imag(spec));
 set(gca, 'xdir', 'reverse', 'xlim', [0 5]);
 xlabel('Chemical shift (ppm)');
+legend('real', 'imag');
 hold off;
 \end{matlabcode}
 \begin{center}
-\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_1}
+\includegraphics[width=\maxwidth{56.196688409433015em}]{figure_1.png}
 \end{center}
 
 \end{document}
